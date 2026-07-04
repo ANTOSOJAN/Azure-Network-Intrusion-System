@@ -1,80 +1,90 @@
-# Azure Network Intrusion Detection System
+# ☁️ Azure Network Intrusion Detection System
 
 ## Cloud-Native Real-Time Network Intrusion Detection using Microsoft Azure
 
 ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure\&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
-![Status](https://img.shields.io/badge/Phase-1%20Complete-success)
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python\&logoColor=white)
+![Status](https://img.shields.io/badge/Phase-1%20Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-# Project Overview
+## 📖 Project Overview
 
-This project is the cloud-native evolution of my MSc dissertation, **Real-Time Network Intrusion Detection System**.
+This project is the **cloud-native implementation** of my MSc dissertation:
 
-The goal is to migrate a traditional big data intrusion detection pipeline into Microsoft Azure by integrating Azure cloud services step by step while maintaining a scalable, secure, and production-ready architecture.
+> **Real-Time Network Intrusion Detection System using Big Data Technologies and Machine Learning**
 
-**Current Phase:** Azure Blob Storage Integration
+The objective is to migrate a traditional big data intrusion detection pipeline into **Microsoft Azure**, replacing local infrastructure with scalable cloud services.
 
----
-
-# Objectives
-
-* Learn Microsoft Azure through a real-world cybersecurity project
-* Build a scalable cloud-native Network Intrusion Detection System (NIDS)
-* Replace local infrastructure with Azure services
-* Demonstrate cloud engineering and data engineering skills
-* Develop a portfolio-quality Azure project
+Instead of building a sample Azure application, this repository demonstrates the migration of a real-world cybersecurity project to Azure, one service at a time.
 
 ---
 
-# Phase 1 – Azure Blob Storage
+# 🎯 Project Objectives
 
-### Completed
+* Build a cloud-native Network Intrusion Detection System (NIDS)
+* Learn Microsoft Azure through practical implementation
+* Replace local storage with Azure Blob Storage
+* Implement cloud-native data engineering practices
+* Develop a production-ready Azure portfolio project
 
-* Azure Resource Group
-* Azure Storage Account
-* Azure Blob Container
+---
+
+# 🚀 Phase 1 – Azure Blob Storage (Completed)
+
+### ✔ Completed Tasks
+
+* Created Azure Resource Group
+* Created Azure Storage Account
+* Configured Azure Blob Storage
+* Created Blob Container
 * Uploaded preprocessed CICIDS2018 dataset
-* Secure environment configuration using `.env`
-* Azure Blob Storage SDK integration
-* Download dataset directly from Azure Blob Storage
-* Load dataset into a Pandas DataFrame
+* Configured secure environment variables (.env)
+* Integrated Azure Storage Blob SDK
+* Loaded dataset directly from Azure Blob Storage using Python
 
 ---
 
-# Azure Architecture
+# 🏗️ Phase 1 Architecture
 
 ```text
-Azure Blob Storage
-        │
-        ▼
-balanced_dataset.csv
-        │
-        ▼
-Python Azure Storage SDK
-(blob_storage.py)
-        │
-        ▼
-Pandas DataFrame
-(300000 × 80)
+                     Azure Cloud
+
+        +------------------------------------+
+        |        Azure Blob Storage          |
+        |                                    |
+        |   balanced_dataset.csv             |
+        +----------------+-------------------+
+                         |
+                         |
+                         ▼
+        +------------------------------------+
+        | Python Azure Blob Storage SDK      |
+        |        blob_storage.py             |
+        +----------------+-------------------+
+                         |
+                         ▼
+        +------------------------------------+
+        |      Pandas DataFrame              |
+        |      Shape (300000 × 80)           |
+        +------------------------------------+
 ```
 
 ---
 
-# Technologies Used
+# 💻 Technologies Used
 
-## Cloud
+## Cloud Platform
 
 * Microsoft Azure
 * Azure Blob Storage
 
-## Programming
+## Programming Language
 
 * Python 3.13
 
-## Libraries
+## Python Libraries
 
 * pandas
 * azure-storage-blob
@@ -87,18 +97,7 @@ Pandas DataFrame
 
 ---
 
-# Dataset
-
-| Item     | Details            |
-| -------- | ------------------ |
-| Dataset  | CICIDS2018         |
-| Records  | 300,000            |
-| Features | 80                 |
-| Storage  | Azure Blob Storage |
-
----
-
-# Project Structure
+# 📂 Project Structure
 
 ```text
 Azure-Network-Intrusion-System/
@@ -120,29 +119,42 @@ Azure-Network-Intrusion-System/
 
 ---
 
-# Running the Project
+# 📊 Dataset Information
 
-Clone the repository
+| Attribute | Value              |
+| --------- | ------------------ |
+| Dataset   | CICIDS2018         |
+| Records   | 300,000            |
+| Features  | 80                 |
+| Storage   | Azure Blob Storage |
+
+---
+
+# ▶️ Running the Project
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/ANTOSOJAN/Azure-Network-Intrusion-System.git
 ```
 
-Install dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file containing:
+## Configure Environment Variables
 
-```
-AZURE_STORAGE_CONNECTION_STRING=your_connection_string
+Create a `.env` file:
+
+```env
+AZURE_STORAGE_CONNECTION_STRING=YOUR_CONNECTION_STRING
 CONTAINER_NAME=datasets
 BLOB_NAME=balanced_dataset.csv
 ```
 
-Run the test script
+## Run the Application
 
 ```bash
 python test_blob.py
@@ -150,36 +162,100 @@ python test_blob.py
 
 ---
 
-# Skills Demonstrated
+# 📸 Project Screenshots
+
+## 1️⃣ Azure Resource Group
+
+<img src="screenshots/01-resource-group.png" width="900">
+
+---
+
+## 2️⃣ Azure Storage Account
+
+<img src="screenshots/02-create storage account.png" width="900">
+
+---
+
+## 3️⃣ Storage Account Successfully Deployed
+
+<img src="screenshots/03-storage account successfully deployed.png" width="900">
+
+---
+
+## 4️⃣ Azure Blob Container
+
+<img src="screenshots/04-blob containers.png" width="900">
+
+---
+
+## 5️⃣ Dataset Uploaded to Azure Blob Storage
+
+<img src="screenshots/05-dataset uploaded.png" width="900">
+
+---
+
+## 6️⃣ Project Structure
+
+<img src="screenshots/06-python-structure.png" width="900">
+
+---
+
+## 7️⃣ Dataset Successfully Loaded from Azure
+
+<img src="screenshots/07python-output.png" width="900">
+
+---
+
+# 🎓 Skills Demonstrated
 
 * Microsoft Azure
 * Azure Blob Storage
+* Cloud Computing
 * Cloud Storage
-* Cloud Data Engineering
 * Python Development
+* Data Engineering
 * Environment Variable Management
 * Git & GitHub
-* Data Processing with Pandas
+* Pandas
+* Azure SDK Integration
 
 ---
 
-# Project Roadmap
+# 🗺️ Azure Migration Roadmap
 
-* ✅ Phase 1 – Azure Blob Storage
-* ⏳ Phase 2 – Azure SQL Database
-* ⏳ Phase 3 – Azure Event Hubs
-* ⏳ Phase 4 – Azure Databricks
-* ⏳ Phase 5 – Azure Machine Learning
-* ⏳ Phase 6 – Power BI Dashboard
+| Phase                              | Status      |
+| ---------------------------------- | ----------- |
+| ✅ Phase 1 – Azure Blob Storage     | Completed   |
+| ⏳ Phase 2 – Azure SQL Database     | In Progress |
+| ⏳ Phase 3 – Azure Event Hubs       | Planned     |
+| ⏳ Phase 4 – Azure Databricks       | Planned     |
+| ⏳ Phase 5 – Azure Machine Learning | Planned     |
+| ⏳ Phase 6 – Power BI Dashboard     | Planned     |
 
 ---
 
-# Author
+# 🌟 Future Enhancements
+
+* Store prediction results in Azure SQL Database
+* Replace local Kafka with Azure Event Hubs
+* Process streaming data using Azure Databricks
+* Deploy trained ML models with Azure Machine Learning
+* Build an interactive dashboard using Power BI
+* Integrate Azure Key Vault for secret management
+* Add Azure Monitor for logging and monitoring
+
+---
+
+# 👨‍💻 Author
 
 **Anto Sojan**
 
-MSc Big Data Management & Analytics
+📍 Dublin, Ireland
 
 ---
 
-> **This repository documents my journey of transforming a traditional big data intrusion detection system into a cloud-native solution using Microsoft Azure.**
+## ⭐ Project Vision
+
+This repository documents my journey of transforming a traditional big data Network Intrusion Detection System into a modern cloud-native cybersecurity solution using Microsoft Azure.
+
+Each completed phase introduces a new Azure service while maintaining a scalable and production-oriented architecture.
