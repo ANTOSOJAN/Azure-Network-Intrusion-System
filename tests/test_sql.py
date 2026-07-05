@@ -1,4 +1,4 @@
-from azure.sql_database import get_sql_connection
+from azure_services.sql_database import get_sql_connection
 
 try:
     print("Connecting to Azure SQL Database...\n")

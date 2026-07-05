@@ -1,3 +1,11 @@
+"""
+Azure Blob Storage Module
+
+Downloads the CICIDS2018 dataset from Azure Blob Storage
+and loads it into a Pandas DataFrame.
+"""
+
+
 import os
 from io import BytesIO
 
@@ -11,6 +19,15 @@ load_dotenv()
 CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 CONTAINER_NAME = os.getenv("CONTAINER_NAME")
 BLOB_NAME = os.getenv("BLOB_NAME")
+
+print("Connection Loaded:", CONNECTION_STRING is not None)
+print("Container:", CONTAINER_NAME)
+print("Blob:", BLOB_NAME)
+
+if CONNECTION_STRING:
+    print("Connection Preview:", CONNECTION_STRING[:50] + "...")
+else:
+    print("Connection String is EMPTY!")
 
 
 def load_dataset_from_azure():

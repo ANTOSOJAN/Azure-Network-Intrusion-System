@@ -1,4 +1,4 @@
-from azure.blob_storage import load_dataset_from_azure
+from azure_services.blob_storage import load_dataset_from_azure
 
 try:
     df = load_dataset_from_azure()

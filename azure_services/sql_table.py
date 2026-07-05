@@ -1,4 +1,4 @@
-from azure.sql_database import get_sql_connection
+from azure_services.sql_database import get_sql_connection
 
 connection = get_sql_connection()
 cursor = connection.cursor()
