@@ -310,63 +310,133 @@ Azure SQL Database
 
 # 📸 Project Screenshots
 
+---
+
+# ✅ Phase 1 – Azure Blob Storage
+
 ### 1️⃣ Azure Resource Group
 
-<img src="screenshots/01-resource-group.png" width="900" alt="Azure Resource Group">
+<img src="screenshots/phase_1/01-resource-group.png" width="900" alt="Azure Resource Group">
 
 ---
 
 ### 2️⃣ Create Azure Storage Account
 
-<img src="screenshots/02-create%20storage%20account.png" width="900" alt="Create Azure Storage Account">
+<img src="screenshots/phase_1/02-create storage account.png" width="900" alt="Create Azure Storage Account">
 
 ---
 
 ### 3️⃣ Azure Storage Account Successfully Deployed
 
-<img src="screenshots/03-storage%20account%20successfully%20deployed.png" width="900" alt="Storage Account Successfully Deployed">
+<img src="screenshots/phase_1/03-storage account successfully deployed.png" width="900" alt="Azure Storage Account Successfully Deployed">
 
 ---
 
 ### 4️⃣ Azure Blob Container
 
-<img src="screenshots/04-blob%20containers.png" width="900" alt="Azure Blob Container">
+<img src="screenshots/phase_1/04-blob containers.png" width="900" alt="Azure Blob Container">
 
 ---
 
 ### 5️⃣ Dataset Uploaded to Azure Blob Storage
 
-<img src="screenshots/05-dataset%20uploaded.png" width="900" alt="Dataset Uploaded">
+<img src="screenshots/phase_1/05-dataset uploaded.png" width="900" alt="Dataset Uploaded">
 
 ---
 
-### 6️⃣ Project Structure
+### 6️⃣ Project Structure (Phase 1)
 
-<img src="screenshots/06-python-structure.png" width="900" alt="Project Structure">
+<img src="screenshots/phase_1/06-python-structure.png" width="900" alt="Project Structure">
 
 ---
 
 ### 7️⃣ Dataset Successfully Loaded from Azure Blob Storage
 
-<img src="screenshots/07python-output.png" width="900" alt="Dataset Loaded Successfully">
+<img src="screenshots/phase_1/07python-output.png" width="900" alt="Dataset Loaded Successfully">
 
 ---
+
+# ✅ Phase 2 – Azure SQL Database
+
+### 8️⃣ Updated Project Structure
+
+<img src="screenshots/phase_2/08-project-structure-phase2.png" width="900" alt="Updated Project Structure">
+
 ---
 
-## Phase 2 – Azure SQL Database
+### 9️⃣ Azure SQL Firewall Configuration
 
-<img src="screenshots/08-project-structure-phase2.png.png" width="900" alt="Updated Project Structure">
+<img src="screenshots/phase_2/09-firewall-configuration.png" width="900" alt="Azure SQL Firewall Configuration">
 
-<img src="screenshots/09-firewall-configuration.png.png" width="900" alt="Azure SQL Firewall Configuration">
+---
 
-<img src="screenshots/10-sql-connection-success.png.png" width="900" alt="Successful Azure SQL Connection">
+### 🔟 Successful Azure SQL Connection
 
-<img src="screenshots/11-predictions-table-created.png.png" width="900" alt="Predictions Table Created">
+<img src="screenshots/phase_2/10-sql-connection-success.png" width="900" alt="Successful Azure SQL Connection">
 
-<img src="screenshots/12-query-editor.png.png" width="900" alt="Azure SQL Query Editor">
+---
 
-<img src="screenshots/13-prediction-record.png.png" width="900" alt="Prediction Stored Successfully">
+### 1️⃣1️⃣ Predictions Table Created
 
+<img src="screenshots/phase_2/11-predictions-table-created.png" width="900" alt="Predictions Table Created">
+
+---
+
+### 1️⃣2️⃣ Azure SQL Query Editor
+
+<img src="screenshots/phase_2/12-query-editor.png" width="900" alt="Azure SQL Query Editor">
+
+---
+
+### 1️⃣3️⃣ Prediction Stored Successfully
+
+<img src="screenshots/phase_2/13-prediction-record.png" width="900" alt="Prediction Stored Successfully">
+
+---
+
+# ✅ Phase 3 – Azure Event Hubs & Real-Time Streaming
+
+### 1️⃣4️⃣ Azure Event Hub Namespace
+
+<img src="screenshots/phase_3/14-eventhub namespace.png" width="900" alt="Azure Event Hub Namespace">
+
+---
+
+### 1️⃣5️⃣ Event Hub Deployment Completed
+
+<img src="screenshots/phase_3/15-event hub deployment.png" width="900" alt="Event Hub Deployment">
+
+---
+
+### 1️⃣6️⃣ Azure Event Hub Created
+
+<img src="screenshots/phase_3/16-event hub created.png" width="900" alt="Azure Event Hub Created">
+
+---
+
+### 1️⃣7️⃣ Azure Storage Networking Configuration
+
+<img src="screenshots/phase_3/17-azure storage networking.png" width="900" alt="Azure Storage Networking">
+
+---
+
+### 1️⃣8️⃣ Predictions Stored in Azure SQL Database
+
+<img src="screenshots/phase_3/18-azure sql predictions.png" width="900" alt="Azure SQL Predictions">
+
+---
+
+### 1️⃣9️⃣ Real-Time Event Streaming
+
+<img src="screenshots/phase_3/19-event streaming.png" width="900" alt="Event Streaming">
+
+---
+
+### 2️⃣0️⃣ Event Consumer Processing Output
+
+<img src="screenshots/phase_3/20-consumer output.png" width="900" alt="Consumer Output">
+
+---
 ---
 
 # 🎓 Skills Demonstrated
