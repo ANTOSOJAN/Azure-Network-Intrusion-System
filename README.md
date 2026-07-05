@@ -4,7 +4,7 @@
 
 ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
-![Status](https://img.shields.io/badge/Phase-2%20Completed-success)
+![Status](https://img.shields.io/badge/Phase-3%20Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
@@ -59,10 +59,22 @@ Instead of building a sample Azure application, this repository documents the mi
 
 ---
 
+## ✅ Phase 3 – Azure Event Hubs
+
+- Azure Event Hub Namespace
+- Azure Event Hub
+- Event Producer
+- Event Consumer
+- Real-time Network Traffic Streaming
+- Machine Learning Prediction Pipeline
+- Azure SQL Prediction Logging
+- Persistent SQL Database Connection
+- Improved SQL Schema
+- Modular Production-Style Architecture
+
 # 🏗 Current System Architecture
 
-```text
-                    Microsoft Azure
+                            Microsoft Azure
 
         +-------------------------------+
         |      Azure Blob Storage       |
@@ -70,20 +82,26 @@ Instead of building a sample Azure application, this repository documents the mi
         +---------------+---------------+
                         |
                         ▼
-              Python Blob Storage SDK
+             Dataset Streaming Script
                         |
                         ▼
-             Pandas DataFrame (300000 x 80)
+        +-------------------------------+
+        |      Azure Event Hub          |
+        | Real-Time Network Events      |
+        +---------------+---------------+
                         |
                         ▼
-          Machine Learning Prediction
+        Event Hub Consumer (Python)
+                        |
+                        ▼
+       Machine Learning Prediction
+      Gradient Boosting Classifier
                         |
                         ▼
         +-------------------------------+
         |      Azure SQL Database       |
-        |      predictions table        |
+        | Prediction Logs               |
         +-------------------------------+
-```
 
 ---
 
@@ -94,6 +112,7 @@ Instead of building a sample Azure application, this repository documents the mi
 - Microsoft Azure
 - Azure Blob Storage
 - Azure SQL Database
+- Azure Event Hubs
 
 ## Programming
 
@@ -105,6 +124,9 @@ Instead of building a sample Azure application, this repository documents the mi
 - pyodbc
 - azure-storage-blob
 - python-dotenv
+- azure-eventhub
+- scikit-learn
+- joblib
 
 ## Database
 
@@ -121,23 +143,37 @@ Instead of building a sample Azure application, this repository documents the mi
 # 📂 Project Structure
 
 ```text
-Azure-Network-Intrusion-System/
+Big_Data_Pipeline/
 
 │
-├── azure/
-│   ├── __init__.py
+├── azure_services/
 │   ├── blob_storage.py
+│   ├── eventhub_producer.py
+│   ├── eventhub_consumer.py
+│   ├── ml_predictor.py
 │   ├── sql_database.py
-│   ├── create_table.py
-│   ├── insert_prediction.py
-│   └── view_predictions.py
+│   ├── sql_logger.py
+│   ├── view_prediction.py
+│   └── __init__.py
+│
+├── models/
+│   ├── best_ids_model.pkl
+│   ├── scaler.pkl
+│   └── feature_columns.pkl
+│
+├── tests/
+│   ├── test_blob.py
+│   ├── test_eventhub.py
+│   ├── test_predictor.py
+│   ├── test_stream_dataset.py
+│   └── test_sql.py
 │
 ├── screenshots/
+│   ├── phase1/
+│   ├── phase2/
+│   └── phase3/
 │
-├── docker-compose.yaml
 ├── requirements.txt
-├── test_blob.py
-├── test_sql.py
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -191,6 +227,11 @@ SQL_SERVER=YOUR_SERVER.database.windows.net
 SQL_DATABASE=nids-db
 SQL_USERNAME=YOUR_USERNAME
 SQL_PASSWORD=YOUR_PASSWORD
+
+# Azure Event Hub
+
+EVENT_HUB_CONNECTION_STRING=
+EVENT_HUB_NAME=
 ```
 
 ---
@@ -200,7 +241,8 @@ SQL_PASSWORD=YOUR_PASSWORD
 ## Test Azure Blob Storage
 
 ```bash
-python test_blob.py
+python tests/test_blob.py
+
 ```
 
 ---
@@ -208,7 +250,7 @@ python test_blob.py
 ## Test Azure SQL Connection
 
 ```bash
-python test_sql.py
+python tests/test_sql.py
 ```
 
 ---
@@ -235,9 +277,36 @@ python -m azure.insert_prediction
 python -m azure.view_predictions
 ```
 
+```bash
+python tests/test_eventhub.py
+```
+
 ---
 
 ---
+
+# Real time Workflow Section
+
+Azure Blob Storage
+        │
+        ▼
+Load Dataset
+        │
+        ▼
+Stream Events
+        │
+        ▼
+Azure Event Hub
+        │
+        ▼
+Event Consumer
+        │
+        ▼
+ML Prediction
+        │
+        ▼
+Azure SQL Database
+
 
 # 📸 Project Screenshots
 
@@ -302,17 +371,18 @@ python -m azure.view_predictions
 
 # 🎓 Skills Demonstrated
 
-- Microsoft Azure
+-- Microsoft Azure
 - Azure Blob Storage
+- Azure Event Hubs
 - Azure SQL Database
+- Machine Learning
+- Gradient Boosting Classifier
+- Event-Driven Architecture
+- Real-Time Data Streaming
+- Python
 - Cloud Computing
-- Cloud Storage
-- Cloud Databases
-- Python Development
 - Data Engineering
 - SQL
-- Secure Environment Configuration
-- Azure SDK Integration
 - Git & GitHub
 
 ---
@@ -321,18 +391,18 @@ python -m azure.view_predictions
 
 | Phase | Status |
 |--------|--------|
-| ✅ Phase 1 – Azure Blob Storage | Completed |
-| ✅ Phase 2 – Azure SQL Database | Completed |
-| ⏳ Phase 3 – Azure Event Hubs | Planned |
-| ⏳ Phase 4 – Azure Databricks | Planned |
-| ⏳ Phase 5 – Azure Machine Learning | Planned |
-| ⏳ Phase 6 – Power BI Dashboard | Planned |
+| ✅ Azure Blob Storage | Completed |
+| ✅ Azure SQL Database | Completed |
+| ✅ Azure Event Hubs | Completed |
+| ⏳ Azure Databricks | Next |
+| ⏳ Azure Machine Learning | Planned |
+| ⏳ Power BI Dashboard | Planned |
+| ⏳ Azure Key Vault | Planned |
 
 ---
 
 # 🚀 Future Enhancements
 
-- Stream live network traffic using Azure Event Hubs
 - Process streaming data with Azure Databricks
 - Deploy intrusion detection models using Azure Machine Learning
 - Store prediction history in Azure SQL Database
