@@ -4,8 +4,11 @@
 
 ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
-![Apache Spark](https://img.shields.io/badge/Apache-Spark-E25A1C?logo=apachespark&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-3.x-E25A1C?logo=apachespark&logoColor=white)
 ![Databricks](https://img.shields.io/badge/Azure-Databricks-FF3621?logo=databricks&logoColor=white)
+![Azure SQL](https://img.shields.io/badge/Azure-SQL-CC2927?logo=microsoftsqlserver&logoColor=white)
+![Event Hubs](https://img.shields.io/badge/Azure-Event%20Hubs-0078D4)
+![Architecture](https://img.shields.io/badge/Architecture-End--to--End%20Cloud%20Pipeline-blueviolet)
 ![Status](https://img.shields.io/badge/Phase-4%20Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
