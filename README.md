@@ -557,6 +557,44 @@ Azure SQL Database
 
 ---
 
+# ✅ Phase 5 – Azure Machine Learning Model Training & Registration
+
+### 2️⃣9️⃣ Azure Machine Learning Workspace
+
+<img src="screenshots/phase_5/29-azure-machine-learning-workspace.png" width="900" alt="Azure Machine Learning Workspace">
+
+---
+
+### 3️⃣0️⃣ Azure ML Studio - Models
+
+<img src="screenshots/phase_5/30-azure-ml-studio-models.png" width="900" alt="Azure ML Studio Models">
+
+---
+
+### 3️⃣1️⃣ Model Registered in Azure Machine Learning
+
+<img src="screenshots/phase_5/31-model-registered.png" width="900" alt="Model Registered">
+
+---
+
+### 3️⃣2️⃣ Azure ML JupyterLab Environment
+
+<img src="screenshots/phase_5/32-jupyterlab-environment.png" width="900" alt="Azure ML JupyterLab Environment">
+
+---
+
+### 3️⃣3️⃣ Azure ML Compute Instance Running
+
+<img src="screenshots/phase_5/33-compute-instance-running.png" width="900" alt="Azure ML Compute Instance Running">
+
+---
+
+### 3️⃣4️⃣ Random Forest Model Evaluation
+
+<img src="screenshots/phase_5/34-model-evaluation.png" width="900" alt="Random Forest Model Evaluation">
+
+---
+
 ---
 
 ## Azure Databricks ETL
