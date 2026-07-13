@@ -377,6 +377,19 @@ ML Prediction
         ▼
 Azure SQL Database
 
+## 📈 Model Performance
+
+| Metric | Value |
+|---------|------:|
+| Algorithm | Random Forest |
+| Dataset | CICIDS2018 |
+| Training Samples | 240,000 |
+| Testing Samples | 60,000 |
+| Accuracy | 94.50% |
+| Precision | 95% |
+| Recall | 94% |
+| F1 Score | 94% |
+
 
 # 📸 Project Screenshots
 
