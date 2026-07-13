@@ -482,6 +482,56 @@ Azure SQL Database
 <img src="screenshots/phase_3/20-consumer output.png" width="900" alt="Consumer Output">
 
 ---
+# ✅ Phase 4 – Azure Databricks Data Preprocessing
+
+### 2️⃣1️⃣ Azure Blob Storage Dataset
+
+<img src="screenshots/phase_4/21-azure_blob_storage.png" width="900" alt="Azure Blob Storage Dataset">
+
+---
+
+### 2️⃣2️⃣ Unity Catalog Setup
+
+<img src="screenshots/phase_4/22-unity-catalog-setup.png" width="900" alt="Unity Catalog Setup">
+
+---
+
+### 2️⃣3️⃣ Azure Databricks Cluster
+
+<img src="screenshots/phase_4/23- databrricks-cluster.png" width="900" alt="Azure Databricks Cluster">
+
+---
+
+### 2️⃣4️⃣ Dataset Uploaded to Unity Catalog Volume
+
+<img src="screenshots/phase_4/24- dataset-uploaded-to-volume.png" width="900" alt="Dataset Uploaded to Unity Catalog Volume">
+
+---
+
+### 2️⃣5️⃣ Dataset Successfully Loaded into PySpark
+
+<img src="screenshots/phase_4/25- reading_dataset.png" width="900" alt="Dataset Successfully Loaded">
+
+---
+
+### 2️⃣6️⃣ Dataset Schema Validation
+
+<img src="screenshots/phase_4/26-dataset-schema.png" width="900" alt="Dataset Schema">
+
+---
+
+### 2️⃣7️⃣ Data Quality Analysis
+
+<img src="screenshots/phase_4/27-missing_values.png" width="900" alt="Data Quality Analysis">
+
+---
+
+### 2️⃣8️⃣ Processed Dataset Saved as Parquet
+
+<img src="screenshots/phase_4/28- parquet-dataset-output.png" width="900" alt="Processed Dataset Saved as Parquet">
+
+---
+
 ---
 
 ## Azure Databricks ETL
