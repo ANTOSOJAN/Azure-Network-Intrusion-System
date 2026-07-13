@@ -1,10 +1,12 @@
 # ☁️ Azure Network Intrusion Detection System
 
-## Cloud-Native Real-Time Network Intrusion Detection using Microsoft Azure
+## ☁️ Cloud-Native Real-Time Network Intrusion Detection using Microsoft Azure
 
 ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
-![Status](https://img.shields.io/badge/Phase-3%20Completed-success)
+![Apache Spark](https://img.shields.io/badge/Apache-Spark-E25A1C?logo=apachespark&logoColor=white)
+![Databricks](https://img.shields.io/badge/Azure-Databricks-FF3621?logo=databricks&logoColor=white)
+![Status](https://img.shields.io/badge/Phase-4%20Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
@@ -72,47 +74,81 @@ Instead of building a sample Azure application, this repository documents the mi
 - Improved SQL Schema
 - Modular Production-Style Architecture
 
+  ## ✅ Phase 4 – Azure Databricks
+
+- Azure Databricks Workspace
+- Unity Catalog
+- Unity Catalog Schema
+- Unity Catalog Volume
+- PySpark Data Processing
+- Data Validation
+- Duplicate Removal
+- Missing Value Handling
+- Parquet Data Storage
+- Distributed ETL Pipeline
+
 # 🏗 Current System Architecture
 
-                            Microsoft Azure
+                                       Microsoft Azure
 
-        +-------------------------------+
-        |      Azure Blob Storage       |
-        | balanced_dataset.csv          |
-        +---------------+---------------+
+    +-------------------------------------------+
+    |         Azure Blob Storage                |
+    |      balanced_dataset.csv (Raw Data)      |
+    +-------------------+-----------------------+
                         |
                         ▼
-             Dataset Streaming Script
+    +-------------------------------------------+
+    |         Azure Databricks                  |
+    |      Unity Catalog + PySpark ETL          |
+    |-------------------------------------------|
+    | • Read CSV from Unity Catalog Volume      |
+    | • Validate Schema                         |
+    | • Remove Duplicates                       |
+    | • Handle Missing Values                   |
+    | • Save Processed Dataset as Parquet       |
+    +-------------------+-----------------------+
                         |
                         ▼
-        +-------------------------------+
-        |      Azure Event Hub          |
-        | Real-Time Network Events      |
-        +---------------+---------------+
+    +-------------------------------------------+
+    |     Processed Dataset (Parquet)           |
+    |          Unity Catalog Volume             |
+    +-------------------+-----------------------+
                         |
                         ▼
-        Event Hub Consumer (Python)
+    +-------------------------------------------+
+    |          Azure Event Hubs                 |
+    |     Real-Time Network Event Streaming     |
+    +-------------------+-----------------------+
                         |
                         ▼
-       Machine Learning Prediction
-      Gradient Boosting Classifier
+    +-------------------------------------------+
+    |      Event Hub Consumer (Python)          |
+    |   Reads Events & Invokes ML Prediction    |
+    +-------------------+-----------------------+
                         |
                         ▼
-        +-------------------------------+
-        |      Azure SQL Database       |
-        | Prediction Logs               |
-        +-------------------------------+
-
+    +-------------------------------------------+
+    |     Machine Learning Prediction           |
+    |     Gradient Boosting Classifier          |
+    +-------------------+-----------------------+
+                        |
+                        ▼
+    +-------------------------------------------+
+    |        Azure SQL Database                 |
+    |   Stores Intrusion Detection Predictions  |
+    +-------------------------------------------+
 ---
 
 # 💻 Technologies Used
 
 ## Cloud
 
-- Microsoft Azure
-- Azure Blob Storage
-- Azure SQL Database
-- Azure Event Hubs
+-Microsoft Azure
+-Azure Blob Storage
+-Azure SQL Database
+-Azure Event Hubs
+-Azure Databricks
+-Unity Catalog
 
 ## Programming
 
@@ -127,6 +163,7 @@ Instead of building a sample Azure application, this repository documents the mi
 - azure-eventhub
 - scikit-learn
 - joblib
+- pyspark
 
 ## Database
 
@@ -156,6 +193,10 @@ Big_Data_Pipeline/
 │   ├── view_prediction.py
 │   └── __init__.py
 │
+├── databricks/
+│   ├── Phase4_Databricks_Preprocessing.ipynb
+│   └── README.md (optional)
+│
 ├── models/
 │   ├── best_ids_model.pkl
 │   ├── scaler.pkl
@@ -171,7 +212,8 @@ Big_Data_Pipeline/
 ├── screenshots/
 │   ├── phase1/
 │   ├── phase2/
-│   └── phase3/
+│   ├── phase3/
+│   └── phase4/
 │
 ├── requirements.txt
 ├── README.md
@@ -439,6 +481,17 @@ Azure SQL Database
 ---
 ---
 
+## Azure Databricks ETL
+
+The Databricks notebook performs:
+
+- Reads the CICIDS2018 dataset from a Unity Catalog Volume
+- Validates the dataset schema
+- Removes duplicate records
+- Handles missing values
+- Saves the processed dataset in Parquet format
+- Stores the processed dataset inside Unity Catalog for downstream processing
+
 # 🎓 Skills Demonstrated
 
 -- Microsoft Azure
@@ -459,15 +512,16 @@ Azure SQL Database
 
 # 🗺 Azure Migration Roadmap
 
-| Phase | Status |
-|--------|--------|
-| ✅ Azure Blob Storage | Completed |
-| ✅ Azure SQL Database | Completed |
-| ✅ Azure Event Hubs | Completed |
-| ⏳ Azure Databricks | Next |
-| ⏳ Azure Machine Learning | Planned |
-| ⏳ Power BI Dashboard | Planned |
-| ⏳ Azure Key Vault | Planned |
+| Phase | Description | Status |
+|--------|-------------|--------|
+| Azure Blob Storage | Cloud storage for the CICIDS2018 dataset | ✅ Completed |
+| Azure SQL Database | Store intrusion detection predictions | ✅ Completed |
+| Azure Event Hubs | Real-time network traffic streaming | ✅ Completed |
+| Azure Databricks | PySpark ETL pipeline with Unity Catalog and Parquet processing | ✅ Completed |
+| Azure Machine Learning | Deploy the IDS model as a managed endpoint | ⏳ Next |
+| Power BI Dashboard | Real-time visualization of prediction results | ⏳ Planned |
+| Azure Key Vault | Secure storage of secrets and connection strings | ⏳ Planned |
+| Azure Monitor | Monitoring, diagnostics, and logging | ⏳ Planned |
 
 ---
 
