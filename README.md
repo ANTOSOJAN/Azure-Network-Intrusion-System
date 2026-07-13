@@ -6,10 +6,11 @@
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-3.x-E25A1C?logo=apachespark&logoColor=white)
 ![Databricks](https://img.shields.io/badge/Azure-Databricks-FF3621?logo=databricks&logoColor=white)
+![Azure ML](https://img.shields.io/badge/Azure-Machine%20Learning-0078D4?logo=microsoftazure&logoColor=white)
 ![Azure SQL](https://img.shields.io/badge/Azure-SQL-CC2927?logo=microsoftsqlserver&logoColor=white)
 ![Event Hubs](https://img.shields.io/badge/Azure-Event%20Hubs-0078D4)
 ![Architecture](https://img.shields.io/badge/Architecture-End--to--End%20Cloud%20Pipeline-blueviolet)
-![Status](https://img.shields.io/badge/Phase-4%20Completed-success)
+![Status](https://img.shields.io/badge/Phase-5%20Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
@@ -90,57 +91,79 @@ Instead of building a sample Azure application, this repository documents the mi
 - Parquet Data Storage
 - Distributed ETL Pipeline
 
+## ✅ Phase 5 – Azure Machine Learning
+
+- Azure Machine Learning Workspace
+- Azure ML Studio
+- Compute Instance
+- Random Forest Classifier
+- Model Training
+- Model Evaluation
+- Classification Report
+- Confusion Matrix
+- Model Serialization
+- Model Registration
+- Model Versioning
+- Machine Learning Pipeline  
+
 # 🏗 Current System Architecture
 
-                                       Microsoft Azure
+                          Microsoft Azure
 
-    +-------------------------------------------+
-    |         Azure Blob Storage                |
-    |      balanced_dataset.csv (Raw Data)      |
-    +-------------------+-----------------------+
-                        |
-                        ▼
-    +-------------------------------------------+
-    |         Azure Databricks                  |
-    |      Unity Catalog + PySpark ETL          |
-    |-------------------------------------------|
-    | • Read CSV from Unity Catalog Volume      |
-    | • Validate Schema                         |
-    | • Remove Duplicates                       |
-    | • Handle Missing Values                   |
-    | • Save Processed Dataset as Parquet       |
-    +-------------------+-----------------------+
-                        |
-                        ▼
-    +-------------------------------------------+
-    |     Processed Dataset (Parquet)           |
-    |          Unity Catalog Volume             |
-    +-------------------+-----------------------+
-                        |
-                        ▼
-    +-------------------------------------------+
-    |          Azure Event Hubs                 |
-    |     Real-Time Network Event Streaming     |
-    +-------------------+-----------------------+
-                        |
-                        ▼
-    +-------------------------------------------+
-    |      Event Hub Consumer (Python)          |
-    |   Reads Events & Invokes ML Prediction    |
-    +-------------------+-----------------------+
-                        |
-                        ▼
-    +-------------------------------------------+
-    |     Machine Learning Prediction           |
-    |     Gradient Boosting Classifier          |
-    +-------------------+-----------------------+
-                        |
-                        ▼
-    +-------------------------------------------+
-    |        Azure SQL Database                 |
-    |   Stores Intrusion Detection Predictions  |
-    +-------------------------------------------+
----
++-------------------------------------------+
+|         Azure Blob Storage                |
+|      balanced_dataset.csv (Raw Data)      |
++-------------------+-----------------------+
+                    |
+                    ▼
++-------------------------------------------+
+|         Azure Databricks                  |
+|      Unity Catalog + PySpark ETL          |
+|-------------------------------------------|
+| • Read CSV from Unity Catalog Volume      |
+| • Validate Schema                         |
+| • Remove Duplicates                       |
+| • Handle Missing Values                   |
+| • Save Processed Dataset as Parquet       |
++-------------------+-----------------------+
+                    |
+                    ▼
++-------------------------------------------+
+|     Processed Dataset (Parquet)           |
+|      Unity Catalog Volume                 |
++-------------------+-----------------------+
+                    |
+                    ▼
++-------------------------------------------+
+|          Azure Event Hubs                 |
+|     Real-Time Network Event Streaming     |
++-------------------+-----------------------+
+                    |
+                    ▼
++-------------------------------------------+
+|      Event Hub Consumer (Python)          |
+|-------------------------------------------|
+| • Reads Streaming Network Events          |
+| • Performs ML Inference                   |
++-------------------+-----------------------+
+                    |
+                    ▼
++-------------------------------------------+
+|      Azure Machine Learning               |
+|-------------------------------------------|
+| • Random Forest Classifier                |
+| • Model Training                          |
+| • Model Evaluation (94.5% Accuracy)       |
+| • Model Registry (Version 2)              |
++-------------------+-----------------------+
+                    |
+                    ▼
++-------------------------------------------+
+|        Azure SQL Database                 |
+|-------------------------------------------|
+| • Stores Prediction Logs                  |
+| • Network Intrusion Predictions           |
++-------------------------------------------+
 
 # 💻 Technologies Used
 
@@ -197,13 +220,15 @@ Big_Data_Pipeline/
 │   └── __init__.py
 │
 ├── databricks/
-│   ├── Phase4_Databricks_Preprocessing.ipynb
-│   └── README.md (optional)
+│   └── Phase4_Databricks_Preprocessing.ipynb
+│
+├── azure_ml/
+│   └── Phase5_Model_Training.ipynb
 │
 ├── models/
 │   ├── best_ids_model.pkl
-│   ├── scaler.pkl
-│   └── feature_columns.pkl
+│   ├── feature_columns.pkl
+│   └── scaler.pkl
 │
 ├── tests/
 │   ├── test_blob.py
@@ -213,16 +238,16 @@ Big_Data_Pipeline/
 │   └── test_sql.py
 │
 ├── screenshots/
-│   ├── phase1/
-│   ├── phase2/
-│   ├── phase3/
-│   └── phase4/
+│   ├── phase_1/
+│   ├── phase_2/
+│   ├── phase_3/
+│   ├── phase_4/
+│   └── phase_5/
 │
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
 └── .gitignore
-```
 
 ---
 
@@ -571,7 +596,8 @@ The Databricks notebook performs:
 | Azure SQL Database | Store intrusion detection predictions | ✅ Completed |
 | Azure Event Hubs | Real-time network traffic streaming | ✅ Completed |
 | Azure Databricks | PySpark ETL pipeline with Unity Catalog and Parquet processing | ✅ Completed |
-| Azure Machine Learning | Deploy the IDS model as a managed endpoint | ⏳ Next |
+| Azure Machine Learning | Model training, evaluation, registration, and versioning | ✅ Completed |
+| Azure ML Online Endpoint | Deploy the trained model for real-time inference | ⏳ Next |
 | Power BI Dashboard | Real-time visualization of prediction results | ⏳ Planned |
 | Azure Key Vault | Secure storage of secrets and connection strings | ⏳ Planned |
 | Azure Monitor | Monitoring, diagnostics, and logging | ⏳ Planned |
